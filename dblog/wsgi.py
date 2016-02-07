@@ -9,10 +9,9 @@ https://docs.djangoproject.com/en/1.9/howto/deployment/wsgi/
 
 import os
 
+os.environ["DJANGO_SETTINGS_MODULE"] = "dblog.settings"
+
 from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dblog.settings")
-
 _application = get_wsgi_application()
 
 def application(environ, start_response):
