@@ -128,3 +128,7 @@ STATIC_ROOT = '/var/www/dblog'
 TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.request',
 )
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.app_directories.load_template_source',
+)
