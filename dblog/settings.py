@@ -124,3 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/var/www/dblog'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+  'django.core.context_processors.request',
+)

@@ -1,4 +1,23 @@
-{% if post %}
-<h1>{{ post.post_title }}</h1>
-<div>{{ post.post_body }}</div>
-{% endif %}
+{% extends 'posts/index.html' %}
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12" style="margin-left:30px;">
+    {% if post %}
+    <div style="height:15px;"></div>
+    <p style="margin-bottom:0px">
+      <strong>
+        <a href="{% url 'posts:detail' post_id=post.id slug=post.slug %}">{{ post.post_title }}</a>
+      </strong>
+    </p>
+    <p style="color:rgba(0,0,0,0.3)">{{ post.written_date }}</p>
+    <p>{{ post.post_body | safe }}</p>
+    {% else %}d
+    <div>Content for this id is not available.</div>
+    {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

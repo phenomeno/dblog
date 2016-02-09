@@ -1,0 +1,45 @@
+{% extends 'posts/index.html' %}
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12" style="margin-left: 30px;">
+    {% if paginated_list %}
+    {% for project in paginated_list.object_list %}
+      <div style="height:15px;"></div>
+      <p style="margin-bottom:0px">
+        <strong>
+          <a href="{% url 'posts:detail' post_id=project.id slug=project.slug %}">{{ project.post_title }}</a>
+        </strong>
+      </p>
+      <p style="color:rgba(0,0,0,0.3)">{{ project.written_date }}</p>
+      <p>{{ project.post_body | safe }}</p>
+      <br />
+    {% endfor %}
+    </div>
+    {% else %}
+    <p>No projects are available.</p>
+    {% endif %}
+  </div>
+</div>
+<footer>
+  <nav>
+    <ul style="list-style:none;">
+      {% if paginated_list.has_previous %}
+      <li>
+        <a href="{% url 'posts:projects' %}?page={{ paginated_list.previous_page_number }}">
+          Previous
+        </a>
+      </li>
+      {% endif %}
+      {% if paginated_list.has_next %}
+      <li>
+        <a href="{% url 'posts:projects' %}?page={{ paginated_list.next_page_number }}">
+          Next
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+</footer>
+{% endblock %}

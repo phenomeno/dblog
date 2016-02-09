@@ -1,0 +1,101 @@
+{% extends 'posts/index.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="container-fluid" style="position:relative">
+  <div class="row">
+    <div class="col-xs-6 fixed-column">
+      <div style="margin-left:30px">
+        Hi, my name is Grace.
+        <br />
+        I'm an actuarial associate by day and a software developer during the rest of my free time.
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <br />
+    <div class="col-xs-6"></div>
+
+    <div class="col-xs-6" style="border-left: 1px solid rgba(0,0,0,0.1);text-align:justify">
+      <a class="questions-active questions octicon octicon-mail"></a>
+      <a class="questions octicon octicon-mark-github"></a>
+      <a class="questions octicon octicon-location"></a>
+      <a class="questions octicon octicon-horizontal-rule"></a>
+      <a class="questions octicon octicon-mortar-board"></a>
+      <a class="questions octicon octicon-flame"></a>
+      <a class="questions octicon octicon-file-media"></a>
+      <a class="questions octicon octicon-telescope"></a>
+      <a class="questions octicon octicon-megaphone"></a>
+
+      <div style="height:1px; color: black"></div>
+      <hr style="margin-left:0px;width:50%" />
+
+      <div id="mail" class="hidden answers">
+        <i>Email:</i>
+        <div style="height:10px"></div>
+          <a>writegracelee@gmail.com</a>
+      </div>
+      <div id="mark-github" class="hidden answers">
+        <i>Github:</i>
+        <div style="height:10px"></div>
+          <a>https://github.com/phenomeno</a>
+      </div>
+      <div id="location" class="hidden answers">
+        <i>Current Location:</i>
+        <div style="height:10px"></div>
+          Mountain View, CA
+      </div>
+      <div id="horizontal-rule" class="hidden answers">
+        <i>Resume:</i>
+        <div style="height:10px"></div>
+          <a href="{% static 'posts/GraceLeeResume20160204.pdf' %}" target="_blank">Resume, last updated February 4, 2016</a>
+      </div>
+      <div id="mortar-board" class="hidden answers">
+        <i>Education:</i>
+        <div style="height:10px"></div>
+          UC Davis, Studio Art
+      </div>
+      <div id="flame" class="hidden answers">
+        <i>JPEG of a good photographic print of fire:</i>
+        <div style="height:10px"></div>
+        <a href="http://www.youngsuksuh.com/letburn/letburn09.html" target="_blank"><img src="http://www.youngsuksuh.com/images/letburn/09_.jpg" style="width:500px;height:500px"></img></a>
+        <div style="color:rgba(0,0,0,0.3)">
+          <div>Youngsuk Suh</div>
+          <div>Untitled (INF613), 2011</div>
+          <div>36x46", Archival Pigment Print on Rag Paper</div>
+        </div>
+      </div>
+      <div id="file-media" class="hidden answers">
+        <i>PNG of a good painting:</i>
+        <div style="height:10px"></div>
+          <a href="https://www.artsy.net/artwork/richard-diebenkorn-interior-with-doorway" target="_blank"><img src="{% static 'posts/dbk.png' %}" style="width:90%;margin-left:-200px"></img></a>
+          <div style="color:rgba(0,0,0,0.3)">
+            <div>Richard Diebenkorn</div>
+            <div>Interior with Doorway, 1962</div>
+            <div>70 2/5×59 1/2", Oil on canvas</div>
+          </div>
+      </div>
+      <div id="telescope" class="hidden answers">
+        <i>Photo of a cool constellation:</i>
+        <div style="height:10px"></div>
+          <a href="https://commons.wikimedia.org/w/index.php?curid=7805481" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Pleiades_large.jpg" style="width:500px"></img>
+          </a>
+          <div style="color:rgba(0,0,0,0.3)">
+            <div>By NASA, ESA, AURA/Caltech, Palomar Observatory</div>
+          </div>
+      </div>
+      <div id="megaphone" class="hidden answers">
+        <i>Good music:</i>
+        <div style="height:10px"></div>
+        <iframe width="30" height="25" autohide="0" src="https://www.youtube.com/embed/c0P-MCuiqnw" frameborder="0" allowfullscreen></iframe>
+        <div style="color:rgba(0,0,0,0.3)">
+          <div>Yo Gotti featuring Nicki Minaj</div>
+          <div>Down in the DM, 2016</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
