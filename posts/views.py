@@ -9,6 +9,7 @@ from .models import Post
 
 def detail(request, post_id, slug=None):
     post = get_object_or_404(Post, pk=post_id)
+    post.post_body = markdown(post.post_body)
     return render(request, 'posts/detail.html', {'post': post})
 
 def index(request):

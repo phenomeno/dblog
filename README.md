@@ -1,4 +1,4 @@
 # dblog
 Pronouced 'the blog'. :)
 
-Blog solution using Django.
+Making a personal website using Django.
