@@ -15,11 +15,12 @@
       <p style="color:rgba(0,0,0,0.3)">{{ project.written_date }}</p>
       <p>{{ project.post_body | safe }}</p>
       <br />
-    {% endfor %}
+      {% endfor %}
+      {% else %}
+      <div style="height:15px;"></div>
+      <p>No projects are available.</p>
+      {% endif %}
     </div>
-    {% else %}
-    <p>No projects are available.</p>
-    {% endif %}
   </div>
 </div>
 <footer>
