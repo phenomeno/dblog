@@ -10,7 +10,15 @@ from .models import Post
 
 def detail(request, post_id, slug=None):
     post = get_object_or_404(Post, pk=post_id)
-    post.post_body = markdown(post.post_body)
+    split_body = post.post_body.split("]", 1)
+    split_body = [n.strip() for n in split_body]
+    if len(split_body) > 1:
+        img_list = ast.literal_eval(split_body[0]+"]")
+        post.post_body = markdown(split_body[1])
+    else:
+        img_list = []
+        post.post_body = markdown(split_body[0])
+    post.image_urls = img_list
     return render(request, 'posts/detail.html', {'post': post})
 
 def index(request):
