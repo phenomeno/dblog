@@ -3,25 +3,38 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12" style="margin-left:30px;">
     {% if paginated_list %}
     {% for post in paginated_list.object_list %}
+    <div class="col-xs-12" style="margin-left:30px;">
       <div style="height:15px;"></div>
-      <p style="margin-bottom:0px">
+      <p style="margin-bottom:0px;">
         <strong>
           <a href="{% url 'posts:detail' post_id=post.id slug=post.slug %}">{{ post.post_title }}</a>
         </strong>
       </p>
       <p style="color:rgba(0,0,0,0.3)">{{ post.written_date }}</p>
-      <p>{{ post.post_body | safe }}</p>
-      <br />
-      {% endfor %}
-      {% else %}
-      <div style="height:15px;"></div>
-      <p>No posts are available.</p>
-      {% endif %}
     </div>
-    {% endblock %}
+    <div class="row">
+      <div class="col-xs-5" style="margin-left: 2%;">
+        {% if post.image_urls %}
+        {% for url in post.image_urls %}
+        <div style="height:15px"></div>
+        <img src="{{ url }}" style="width:100%; border:1px rgba(0,0,0,0.2) solid;"></img>
+        {% endfor %}
+        {% else %}
+        <p>No images available.</p>
+        {% endif %}
+      </div>
+      <div class="col-xs-6">
+        <p>{{ post.post_body | safe }}</p>
+        <br />
+        {% endfor %}
+        {% else %}
+        <div style="height:15px;"></div>
+        <p>No posts are available.</p>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </div>
 <footer>
@@ -44,3 +57,4 @@
     </ul>
   </nav>
 </footer>
+{% endblock %}
