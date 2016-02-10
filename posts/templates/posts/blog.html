@@ -2,9 +2,9 @@
 {% block content %}
 
 <div class="container-fluid">
+  {% if paginated_list %}
+  {% for post in paginated_list.object_list %}
   <div class="row">
-    {% if paginated_list %}
-    {% for post in paginated_list.object_list %}
     <div class="col-xs-12" style="margin-left:30px;">
       <div style="height:15px;"></div>
       <p style="margin-bottom:0px;">
@@ -15,7 +15,7 @@
       <p style="color:rgba(0,0,0,0.3)">{{ post.written_date }}</p>
     </div>
     <div class="row">
-      <div class="col-xs-5" style="margin-left: 2%;">
+      <div class="col-xs-5" style="margin-left: 3%;">
         {% if post.image_urls %}
         {% for url in post.image_urls %}
         <div style="height:15px"></div>
@@ -28,14 +28,18 @@
       <div class="col-xs-6">
         <p>{{ post.post_body | safe }}</p>
         <br />
-        {% endfor %}
-        {% else %}
-        <div style="height:15px;"></div>
-        <p>No posts are available.</p>
-        {% endif %}
       </div>
     </div>
   </div>
+  {% endfor %}
+  {% else %}
+  <div class="row">
+    <div class="col-xs-12" style="margin-left:30px;">
+      <div style="height:15px;"></div>
+      <p>No posts are available.</p>
+    </div>
+  </div>
+  {% endif %}
 </div>
 <footer>
   <nav>
