@@ -1,6 +1,7 @@
 {% extends 'posts/index.html' %}
-{% block content %}
+{% block title %}<title>Grace Lee | Projects</title>{% endblock %}
 
+{% block content %}
 <div class="container-fluid">
   {% if paginated_list %}
   {% for project in paginated_list.object_list %}
@@ -19,7 +20,7 @@
         {% if project.image_urls %}
         {% for url in project.image_urls %}
         <div style="height:15px"></div>
-        <img src="{{ url }}" style="width:100%; border:1px rgba(0,0,0,0.2) solid;"></img>
+        <img id="proj_img{{ forloop.counter }}" data-featherlight="#proj_img{{ forloop.counter }}" src="{{ url }}" style="width:100%; border:1px rgba(0,0,0,0.2) solid;"></img>
         {% endfor %}
         {% else %}
         <p>No images available.</p>
