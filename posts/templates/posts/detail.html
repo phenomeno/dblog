@@ -6,27 +6,31 @@
 <div class="container-fluid">
   {% if post %}
   <div class="row">
-    <div class="col-xs-12" style="margin-left:2%;">
-      <p style="margin-bottom:0px;">
-        <strong>
-          <a href="{% url 'posts:detail' post_id=post.id slug=post.slug %}">{{ post.post_title }}</a>
-        </strong>
-      </p>
-      <p style="color:rgba(0,0,0,0.3)">{{ post.written_date }}</p>
-      <div class="row">
-        <div class="col-xs-5">
-          {% if post.image_urls %}
-          {% for url in post.image_urls %}
-          <div style="height:15px"></div>
-          <img id="det-img{{ forloop.counter }}" data-featherlight="#det-img{{ forloop.counter }}" src="{{ url }}" style="width:100%; border:1px rgba(0,0,0,0.2) solid;"></img>
-          {% endfor %}
-          {% else %}
-          <p>No images available.</p>
-          {% endif %}
-        </div>
-        <div class="col-xs-6">
-          <p>{{ post.post_body | safe }}</p>
-          <br />
+    <div class="col-xs-12">
+      <div style="margin-left:2%">
+        <p style="margin-bottom:0px;">
+          <strong>
+            <a href="{% url 'posts:detail' post_id=post.id slug=post.slug %}">{{ post.post_title }}</a>
+          </strong>
+        </p>
+        <p style="color:rgba(0,0,0,0.3)">{{ post.written_date }}</p>
+        <div class="row">
+          <div class="col-xs-5">
+            <div style="margin-right:2%">
+              {% if post.image_urls %}
+              {% for url in post.image_urls %}
+              <div style="height:15px"></div>
+              <img id="det-img{{ forloop.counter }}" data-featherlight="#det-img{{ forloop.counter }}" src="{{ url }}" style="width:100%; border:1px rgba(0,0,0,0.2) solid;"></img>
+              {% endfor %}
+              {% else %}
+              <p>No images available.</p>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <p>{{ post.post_body | safe }}</p>
+            <br />
+          </div>
         </div>
       </div>
     </div>
