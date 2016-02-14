@@ -14,10 +14,10 @@ def detail(request, post_id, slug=None):
     split_body = [n.strip() for n in split_body]
     if len(split_body) > 1:
         img_list = ast.literal_eval(split_body[0]+"]")
-        post.post_body = markdown(split_body[1])
+        post.post_body = markdown(split_body[1], extras=["fenced-code-blocks"])
     else:
         img_list = []
-        post.post_body = markdown(split_body[0])
+        post.post_body = markdown(split_body[0], extras=["fenced-code-blocks"])
     post.image_urls = img_list
     return render(request, 'posts/detail.html', {'post': post})
 
@@ -31,10 +31,10 @@ def projects(request):
         split_body = [n.strip() for n in split_body]
         if len(split_body) > 1:
             img_list = ast.literal_eval(split_body[0]+"]")
-            project.post_body = markdown(split_body[1])
+            project.post_body = markdown(split_body[1], extras=["fenced-code-blocks"])
         else:
             img_list = []
-            project.post_body = markdown(split_body[0])
+            project.post_body = markdown(split_body[0], extras=["fenced-code-blocks"])
         project.image_urls = img_list
     p = Paginator(latest_projects_list, 5)
     page = p.page(int(request.GET.get('page', '1')))
@@ -50,10 +50,10 @@ def blog(request):
         split_body = [n.strip() for n in split_body]
         if len(split_body) > 1:
             img_list = ast.literal_eval(split_body[0]+"]")
-            post.post_body = markdown(split_body[1])
+            post.post_body = markdown(split_body[1], extras=["fenced-code-blocks"])
         else:
             img_list = []
-            post.post_body = markdown(split_body[0])
+            post.post_body = markdown(split_body[0], extras=["fenced-code-blocks"])
         post.image_urls = img_list
     p = Paginator(latest_posts_list, 5)
     page = p.page(int(request.GET.get('page', '1')))

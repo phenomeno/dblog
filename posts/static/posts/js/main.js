@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  $('code').wrap("<pre></pre>");
   $('pre code').each(function(i, block) {
     hljs.highlightBlock(block);
   });

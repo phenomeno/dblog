@@ -6,37 +6,37 @@
   {% if paginated_list %}
   {% for project in paginated_list.object_list %}
   <div class="row">
-    <div class="col-xs-12" style="margin-left: 30px;">
-      <div style="height:15px;"></div>
-      <p style="margin-bottom:0px">
+    <div class="col-xs-12" style="margin-left:2%;">
+      <p style="margin-bottom:0px;">
         <strong>
           <a href="{% url 'posts:detail' post_id=project.id slug=project.slug %}">{{ project.post_title }}</a>
         </strong>
       </p>
       <p style="color:rgba(0,0,0,0.3)">{{ project.written_date }}</p>
-    </div>
-    <div class="row">
-      <div class="col-xs-5" style="margin-left: 3%;">
-        {% if project.image_urls %}
-        {% for url in project.image_urls %}
-        <div style="height:15px"></div>
-        <img id="proj_img{{ forloop.counter }}" data-featherlight="#proj_img{{ forloop.counter }}" src="{{ url }}" style="width:100%; border:1px rgba(0,0,0,0.2) solid;"></img>
-        {% endfor %}
-        {% else %}
-        <p>No images available.</p>
-        {% endif %}
+      <div class="row">
+        <div class="col-xs-5" style="margin-left: 3%;">
+          {% if project.image_urls %}
+          {% for url in project.image_urls %}
+          <div style="height:15px"></div>
+          <img id="proj_img{{ forloop.counter }}" data-featherlight="#proj_img{{ forloop.counter }}" src="{{ url }}" style="width:100%; border:1px rgba(0,0,0,0.2) solid;"></img>
+          {% endfor %}
+          {% else %}
+          <p>No images available.</p>
+          {% endif %}
+        </div>
+        <div class="col-xs-6">
+          <p>{{ project.post_body | safe }}</p>
+          <br />
+        </div>
       </div>
-      <div class="col-xs-6">
-        <p>{{ project.post_body | safe }}</p>
-        <br />
-      </div>
     </div>
+
   </div>
   <br />
   {% endfor %}
   {% else %}
   <div class="row">
-    <div class="col-xs-12" style="margin-left: 30px;">
+    <div class="col-xs-12" style="margin-left:2%;">
       <div style="height:15px;"></div>
       <p>No projects are available.</p>
     </div>
