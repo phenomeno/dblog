@@ -37,10 +37,7 @@ footer {
   background-color: white;
 }
 
-.height-between-posts {
-  height: 15px;
-  height: 4vh;
-}
+
 
 @media screen and (max-width: 450px) {
   body {
@@ -52,6 +49,9 @@ footer {
     bottom: 0;
     left: 0;
     overflow: hidden;
+  }
+  .height-between-posts {
+    height: 15px;
   }
 }
 
@@ -66,6 +66,9 @@ footer {
     left: 0;
     overflow: hidden;
   }
+  .height-between-posts {
+    height: 20px;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -78,5 +81,8 @@ footer {
     bottom: 0;
     left: 0;
     overflow: hidden;
+  }
+  .height-between-posts {
+    height: 50px;
   }
 }
