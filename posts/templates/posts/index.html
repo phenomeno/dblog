@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% block title %}<title>Grace Lee</title>{% endblock %}
     {% block desc %}<meta name="description" content=""></meta>{% endblock %}
-    <link rel="stylesheet" type="text/css" href="{% static 'posts/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'posts/octicons/octicons.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'posts/featherlight.min.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'posts/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/css/featherlight.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/css/mono-blue.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/css/style.css' %}" />
   </head>
   <body>
     <header class="navbar navbar-light navbar-fixed-top" role="banner" style="border-bottom:1px solid rgba(0,0,0,0.1); background-color:white;">
@@ -40,9 +41,10 @@
     {% endblock %}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="{% static 'posts/bootstrap.min.js' %}" type="text/javascript"></script>
-    <script src="{% static 'posts/featherlight.min.js' %}" type="text/javascript"></script>
-    <script src="{% static 'posts/main.js' %}" type="text/javascript"></script>
+    <script src="{% static 'posts/js/bootstrap.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'posts/js/featherlight.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'posts/js/highlight.pack.js' %}" type="text/javascript"></script>
+    <script src="{% static 'posts/js/main.js' %}" type="text/javascript"></script>
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

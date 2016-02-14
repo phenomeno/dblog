@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  $('code').wrap("<pre></pre>");
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
   $('#mail').removeClass("hidden");
   $('.questions').on('click', function(e) {
     e.preventDefault();
