@@ -21,8 +21,6 @@
   display:none;
 }
 
-
-
 .scroll-column {
   position: absolute;
   top:0px;
@@ -37,6 +35,11 @@ footer {
   text-align: center;
   width: 100%;
   background-color: white;
+}
+
+.height-between-posts {
+  height: 15px;
+  height: 2vw;
 }
 
 @media screen and (max-width: 450px) {
