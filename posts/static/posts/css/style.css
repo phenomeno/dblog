@@ -39,7 +39,7 @@ footer {
 
 .height-between-posts {
   height: 15px;
-  height: 2vw;
+  height: 4vh;
 }
 
 @media screen and (max-width: 450px) {
