@@ -35,7 +35,6 @@ def projects(request):
         else:
             img_list = []
             project.post_body = markdown(split_body[0])
-        print project.post_body
         project.image_urls = img_list
     p = Paginator(latest_projects_list, 5)
     page = p.page(int(request.GET.get('page', '1')))
