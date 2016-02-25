@@ -20,7 +20,7 @@
               {% if post.image_urls %}
               {% for url in post.image_urls %}
               <div style="height:15px"></div>
-              <img id="blog_img{{ forloop.counter }}" data-featherlight="#blog_img{{ forloop.counter }}" src="{{ url }}" style="width:100%; border:1px rgba(0,0,0,0.2) solid;"></img>
+              <img id="blog_img{{ post.id }}{{ forloop.counter }}" data-featherlight="#blog_img{{ post.id }}{{ forloop.counter }}" src="{{ url }}" style="width:100%; border:1px rgba(0,0,0,0.2) solid;"></img>
               {% endfor %}
               {% else %}
               <p>No images available.</p>
