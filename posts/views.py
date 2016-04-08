@@ -46,9 +46,19 @@ def projects(request):
 def blog(request):
     latest_posts_list = Post.objects.filter(post_category='blog').order_by('-written_date')
     for post in latest_posts_list:
+        header, main_body = post.post_body.split("#", 1)
+        images, 
+        main_body = "#" + main_body
+
+        print header
+        print main_body
+        print post.post_body
+
         split_body = post.post_body.split("]", 1)
         split_body = [n.strip() for n in split_body]
         if len(split_body) > 1:
+            # ast.literal_eval takes string input and evaluates to python literal structure
+            # strings, numbers, tuples, lists, dicts, booleans, and None
             img_list = ast.literal_eval(split_body[0]+"]")
             post.post_body = markdown(split_body[1], extras=["fenced-code-blocks"])
         else:

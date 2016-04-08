@@ -37,7 +37,11 @@ footer {
   background-color: white;
 }
 
-
+.shift-left {
+  position: fixed;
+  left:2.7%;
+  z-index: 100;
+}
 
 @media screen and (max-width: 450px) {
   body {
