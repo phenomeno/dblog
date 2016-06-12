@@ -47,7 +47,6 @@ def blog(request):
     latest_posts_list = Post.objects.filter(post_category='blog').order_by('-written_date')
     for post in latest_posts_list:
         header, main_body = post.post_body.split("#", 1)
-        images, 
         main_body = "#" + main_body
 
         print header
