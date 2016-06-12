@@ -49,10 +49,6 @@ def blog(request):
         header, main_body = post.post_body.split("#", 1)
         main_body = "#" + main_body
 
-        print header
-        print main_body
-        print post.post_body
-
         split_body = post.post_body.split("]", 1)
         split_body = [n.strip() for n in split_body]
         if len(split_body) > 1:
